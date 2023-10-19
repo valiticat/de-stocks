@@ -9,7 +9,7 @@ jnj = yf.Ticker("JNJ")
 # EPS
 eps_df = jnj.earnings_dates
 latest_eps = eps_df[eps_df['Reported EPS'].notnull()].head(1)
-latest_eps
+latest_eps[['EPS Estimate', 'Reported EPS']]
 #f"Latest EPS reported: {latest_eps['Reported EPS']} USD. Estimate: USD"
 #st.text(pd.to_datetime(ids).year)
 #test = eps_df[pd.to_datetime(eps_df.index.dt.date) == '2023-10-17']
