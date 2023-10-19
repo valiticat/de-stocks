@@ -12,7 +12,7 @@ def run():
 
     st.write("# Welcome!!! 👋")
 
-    st.sidebar.success("Select a demo above.")
+    st.sidebar.selectbox("Select a stock ticker", ['JNJ'])
 
     st.markdown(
         """

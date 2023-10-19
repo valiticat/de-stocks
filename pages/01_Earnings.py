@@ -2,11 +2,11 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 
-st.header('Johnson & Johnson (JNJ)')
+
 st.subheader('')
 
 jnj = yf.Ticker("JNJ")
-jnj.tickerData.info['longName']
+st.header(jnj.info['longName'])
 # EPS
 eps_df = jnj.earnings_dates
 st.text("Latest EPS reported vs estimate")
