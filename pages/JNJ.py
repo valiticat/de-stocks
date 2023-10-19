@@ -2,8 +2,8 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 
-st.title('Johnson & Johnson (JNJ)')
-st.subtitle('')
+st.header('Johnson & Johnson (JNJ)')
+st.subheader('')
 
 jnj = yf.Ticker("JNJ")
 
