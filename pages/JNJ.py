@@ -6,16 +6,14 @@ st.header('Johnson & Johnson (JNJ)')
 st.subheader('')
 
 jnj = yf.Ticker("JNJ")
+jnj.tickerData.info['longName']
 # EPS
 eps_df = jnj.earnings_dates
+st.text("Latest EPS reported vs estimate")
 latest_eps = eps_df[eps_df['Reported EPS'].notnull()].head(1)
-latest_eps[['EPS Estimate', 'Reported EPS']]
-#f"Latest EPS reported: {latest_eps['Reported EPS']} USD. Estimate: USD"
-#st.text(pd.to_datetime(ids).year)
-#test = eps_df[pd.to_datetime(eps_df.index.dt.date) == '2023-10-17']
-#test
-#pd.to_datetime(mygrafic['Дата'].dt.date)
+st.text(latest_eps.to_string(index=False))
 
-# get historical market data
-hist = jnj.history(period="1mo")
-st.line_chart(hist)
+data = yf.download('JNJ','2023-10-01','2023-10-20')['Close']
+st.line_chart(data)
+
+#data = yf.download(tickers_list,'2015-1-1')['Adj Close']
